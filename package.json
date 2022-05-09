@@ -1,0 +1,29 @@
+{
+  "name": "birthstars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "presstart": "next start",
+    "start": "next start",
+    "export": "next export"
+  },
+  "keywords": [],
+  "author": "Alejandro Mejia <alespacial@gmail.com> @Londrack",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^12.1.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.30",
+    "@types/react": "^18.0.8",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.4"
+  }
+}
