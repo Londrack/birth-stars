@@ -8,7 +8,7 @@ export function SignModal() {
         setShowModal, showModal}
         = useContext(AppContext);
     const signElement = signsList[activeSignIndex];
-    const {signName, horoscName, signDetail} = getSignDetail({signElement});
+    const {signName, horoscName, signDetail, subSignDetail} = getSignDetail({signElement});
     const maxListIndex = signsList.length - 1;
 
     const onCloseModal = ():void => {
@@ -18,7 +18,6 @@ export function SignModal() {
 
     const onNavigateNext = ():void => {
         console.log(activeSignIndex);
-        
         activeSignIndex !== maxListIndex && setActiveSignIndex(activeSignIndex+1);
         console.log(activeSignIndex);
     }
@@ -59,6 +58,7 @@ export function SignModal() {
                         {signDetail.map((text, i)=>
                             <p className="pb-5" key={`${i}-desc-${horoscName}`}>{text}</p>
                         )}
+                        {!!subSignDetail && <p className="pb-5">{subSignDetail}</p>}
                     </div>
                     <nav className="flex justify-between text-5xl text-amber-600">
                         <span onClick={onNavigatePrev}

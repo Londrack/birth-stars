@@ -6,7 +6,8 @@ type Props = { signElement: Sign };
 type ReturnObj = {
     signName: string,
     horoscName: string,
-    signDetail: Array<string>
+    signDetail: Array<string>,
+    subSignDetail: string,
 }
 
 export const getSignDetail = ({signElement}: Props): ReturnObj => {
@@ -33,7 +34,8 @@ export const getSignDetail = ({signElement}: Props): ReturnObj => {
     signName = !!subSign ? subSign : signName;
 
     const signDetail = signObj ? signObj?.description : [];
-    !!subSign && signDetail.push(horoscObj[signElement.sub_element]?.description);
+    const subSignDetail = !!subSign ? horoscObj[signElement.sub_element]?.description : '';
+    // !!subSign && signDetail.push(horoscObj[signElement.sub_element]?.description);
 
-    return {signName, horoscName, signDetail}
+    return {signName, horoscName, signDetail, subSignDetail}
 }
