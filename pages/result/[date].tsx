@@ -1,4 +1,4 @@
-import { Button } from '@components/Button';
+// import { Button } from '@components/Button';
 import { ErrorText } from '@components/ErrorText';
 import { SignCard } from '@components/SignCard';
 import { SignModal } from '@components/SignModal';
@@ -30,17 +30,18 @@ const ResultPage = () => {
         date && setDateText(`${date.substring(6,8)} / ${date.substring(4,6)} / ${date.substring(0,4)}`);
     }, [date]);
 
-    const addFavorite = () =>{
-        // Falta poner la lógica para capturar el nombre del Fav
-        const name = 'FALTA DEFINIR';
-        saveFav({name, date});
-    }
+    // const addFavorite = () =>{
+    //     // Falta poner la lógica para capturar el nombre del Fav
+    //     const name = 'FALTA DEFINIR';
+    //     saveFav({name, date});
+    // }
 
     return(
         <>
             {date.length < 8
-                ? <ErrorText text={lang.dateControl} />
-                : (year < 1900) ? <ErrorText text={lang.dateMinimal} />
+            ? <ErrorText text={lang.dateControl} />
+            : (year < 1900)
+                ? <ErrorText text={lang.dateMinimal} />
                 : <>
                     <Head>
                         <title>BirthStars: {dateText}</title>
@@ -55,7 +56,7 @@ const ResultPage = () => {
                             </Button>
                         </span> */}
                     </div>
-                    <div className='overflow-auto h-[70vh]'>
+                    <div className='overflow-auto h-[75vh]'>
                         <div className='grid gap-5
                             grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
                             {signsList.length > 1 && signsList.map((signElement, i) =>

@@ -28,9 +28,11 @@ export function Header() {
                         <Button>{lang.favDates}</Button>
                     </span>
                 }
-                <span onClick={onSetLang}><Button>
-                    {lang.langText}
-                </Button></span>
+                <span className='absolute top-2 right-1 sm:relative sm:top-auto sm:right-auto' onClick={onSetLang}>
+                    <Button>
+                        {lang.langText}
+                    </Button>
+                </span>
             </nav>
         </header>
     )

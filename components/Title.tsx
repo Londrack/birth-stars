@@ -10,10 +10,10 @@ export function Title({ size = '80px', children, type = 'h1' }: Props) {
     return (
         <div>
             {type === 'h1'
-                ? <h1 className="font-amatic">
+                ? <h1 className="font-amatic mt-4 leading-none">
                     { children }
                 </h1>
-                : <h2 className="font-amatic">
+                : <h2 className="font-amatic leading-none">
                     { children }
                 </h2>}
             <style jsx>{`
